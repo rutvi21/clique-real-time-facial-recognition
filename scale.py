@@ -12,7 +12,8 @@ import cv2
 import glob
 
 path = "C:\Users\lenovo\PycharmProjects\face_classification\train"
-seq=iaa.Affine(rotate=(-50, 30))
+seq=iaa.Affine(scale=2.0)  #zoom in 2x
+#seq=iaa.Affine(scale=0.33)  #zoom out 0.3x
 for folder in os.listdir(path):
     i = 0
     for fname in os.listdir(path + '\\' + folder):
