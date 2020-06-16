@@ -12,7 +12,8 @@ import cv2
 import glob
 
 path = "C:\\Users\\lenovo\\PycharmProjects\\face_classification\\train"
-iaa.Sequential([
+
+seq=iaa.Sequential([
     iaa.Fliplr(1),
     iaa.Affine(scale=2.0),
     iaa.Affine(rotate=(-5,55))
