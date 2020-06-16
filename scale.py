@@ -11,8 +11,13 @@ import cv2
 #globbing utility.
 import glob
 
-path = "C:\Users\lenovo\PycharmProjects\face_classification\train"
-seq=iaa.Affine(scale=2.0)  #zoom in 2x
+path = "C:\\Users\\lenovo\\PycharmProjects\\face_classification\\train"
+iaa.Sequential([
+    iaa.Fliplr(1),
+    iaa.Affine(scale=2.0),
+    iaa.Affine(rotate=(-5,55))
+], random_order=True)
+
 #seq=iaa.Affine(scale=0.33)  #zoom out 0.3x
 for folder in os.listdir(path):
     i = 0
